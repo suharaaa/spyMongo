@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
 
 const farmSchema = new mongoose.Schema({
+  regid: { type: String, required: true },
   name: { type: String, required: true },
-  email: { type: String, required: true },
-  password: { type: String, required: true, max: 6 },
-  date: { type: Date, default: Date.now },
+  location: { type: String, required: true},
 });
 
 module.exports = mongoose.model("Farm", farmSchema);
