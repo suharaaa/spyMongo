@@ -1,6 +1,7 @@
 const router = require("express").Router();
-const farmController = require("../controllers/farm.controller");
+const soilController = require("../controllers/soil.controller");
 
-router.get("/farms", farmController.getAllFarms);
+router.post("/soils", soilController.createSoil);
+router.get("/soils", soilController.getAllSoils);
 
 module.exports = router;
