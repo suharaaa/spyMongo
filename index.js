@@ -1,10 +1,11 @@
 const express = require("express");
-const app = express();
-const dotenv = require("dotenv");
+require("dotenv").config();
 const mongoose = require("mongoose");
 const routes = require("./routes");
+const app = express();
 
-dotenv.config();
+//middlewares
+app.use(express.json());
 routes(app);
 
 //connect to db
@@ -14,8 +15,6 @@ mongoose.connect(
   () => console.log("connected to db")
 );
 
-//middlewares
-app.use(express.json());
 
 
 app.listen(3000, () => console.log("server running"));
